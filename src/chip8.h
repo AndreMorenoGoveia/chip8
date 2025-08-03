@@ -6,11 +6,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <time.h>
-
-/* booleanos simples */
-#define true 1
-#define false 0
-#define bool int
+#include <stdbool.h>
 
 /* tamanhos e constantes */
 #define MEM_SIZE 4096
