@@ -21,6 +21,8 @@
  extern uint8_t key[KEY_SIZE];
  extern uint8_t gfx[GFX_ROWS][GFX_COLS];
  extern bool chip8_draw_flag;
+
+ char *rom_path = NULL;
  
  struct timeval clock_prev;
  
@@ -64,6 +66,16 @@
  void keypress(unsigned char k, int x, int y) {
      (void) x; (void) y;
  
+    if(k == 27) {
+        exit(0);
+    }
+
+    if(k == 'l') {
+        chip8_initialize();
+        chip8_loadgame(rom_path);
+        chip8_draw_flag = true;
+    }
+
      int index = keymap(k);
      if (index >= 0) { key[index] = 1; }
  }
@@ -138,6 +150,8 @@
          fprintf(stderr, "Usage: ./play <game>\n");
          exit(2);
      }
+
+     rom_path = argv[1];
  
      // Setup Chip8
      chip8_initialize();

@@ -7,6 +7,6 @@ void chip8_tick() {
     delay_timer = delay_timer > 0 ? delay_timer - 1 : 0;
     sound_timer = sound_timer > 0 ? sound_timer - 1 : 0;
     if (sound_timer == 0) {
-        printf("BEEP!\n");
+        //system("powershell.exe \"[console]::beep(440,100)\" &");
     }
 }
