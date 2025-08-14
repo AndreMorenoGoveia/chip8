@@ -59,6 +59,15 @@ Abaixo está a tabela com o conjunto de instruções reconhecidas pelo interpret
 | `FX55` | `LD [I], Vx`    | Armazena `V0` até `Vx` na memória a partir de `I`                   | Memória         |
 | `FX65` | `LD Vx, [I]`    | Lê da memória a partir de `I` para `V0` até `Vx`                    | Memória         |
 
+## Instalação de dependências
+
+Este projeto usa **OpenGL** e **GLUT**.
+
+- **Ubuntu/Debian**
+  ```bash
+  sudo apt update
+  sudo apt install build-essential freeglut3-dev
+  ```
 
 
 ## Compilando e executando
